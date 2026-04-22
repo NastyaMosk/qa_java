@@ -4,10 +4,12 @@ import java.util.List;
 
 public class Cat {
 
-    Predator predator;
+    // Используем интерфейс Predator
+    private Predator predator;
 
-    public Cat(Feline feline) {
-        this.predator = feline;
+    // В конструкторе лучше принимать Predator, так код будет универсальнее
+    public Cat(Predator predator) {
+        this.predator = predator;
     }
 
     public String getSound() {
@@ -17,5 +19,4 @@ public class Cat {
     public List<String> getFood() throws Exception {
         return predator.eatMeat();
     }
-
 }
